@@ -1854,7 +1854,7 @@ Transform:
   m_GameObject: {fileID: 6724426844372445831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.19190723, y: 0.08841542, z: 0.16062513}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 350, y: 350, z: 350}
   m_Children:
   - {fileID: 3785543343234829786}
   - {fileID: 3785543343267792150}
@@ -1980,6 +1980,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642866598112449576}
     m_Modifications:
+    - target: {fileID: 3128650534640268125, guid: f81a4cc007dc40846a7a528af1125463,
+        type: 3}
+      propertyPath: m_Name
+      value: wing_left
+      objectReference: {fileID: 0}
     - target: {fileID: 8742938674065871489, guid: f81a4cc007dc40846a7a528af1125463,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2050,11 +2055,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.74076
       objectReference: {fileID: 0}
-    - target: {fileID: 3128650534640268125, guid: f81a4cc007dc40846a7a528af1125463,
-        type: 3}
-      propertyPath: m_Name
-      value: wing_left
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f81a4cc007dc40846a7a528af1125463, type: 3}
 --- !u!4 &5610882585780862947 stripped
@@ -2070,6 +2070,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642866598112449576}
     m_Modifications:
+    - target: {fileID: 3128650534640268125, guid: f81a4cc007dc40846a7a528af1125463,
+        type: 3}
+      propertyPath: m_Name
+      value: wing_right
+      objectReference: {fileID: 0}
     - target: {fileID: 8742938674065871489, guid: f81a4cc007dc40846a7a528af1125463,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2139,11 +2144,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.74076
-      objectReference: {fileID: 0}
-    - target: {fileID: 3128650534640268125, guid: f81a4cc007dc40846a7a528af1125463,
-        type: 3}
-      propertyPath: m_Name
-      value: wing_right
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f81a4cc007dc40846a7a528af1125463, type: 3}
