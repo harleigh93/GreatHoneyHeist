@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2939616071452220182}
   - component: {fileID: 300058302803468813}
   - component: {fileID: 5421173662475759510}
+  - component: {fileID: 3031448755800076538}
   m_Layer: 0
   m_Name: guard_group
   m_TagString: Untagged
@@ -62,6 +63,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 550, y: 500, z: 419.9297}
   m_Center: {x: 0, y: 0.5, z: 15.939453}
+--- !u!114 &3031448755800076538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771353940584155688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8f841e0a4dce94181fe11f72eb4353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3256803323697089251
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,11 +5,10 @@ using UnityEngine;
 public class guardBehavior : MonoBehaviour
 {
     // Debugging
-    private bool debug = true; // If print statements should print or not
+    private bool debug = false; // If print statements should be printed or not
     
     private Transform player;    // Player character
-    private float speed = 15f; // How fast the guard will move
-    public float health;
+    private float speed = 15f;   // How fast the guard will move
     private bool canMove;
 
     // Patroling
@@ -161,6 +160,7 @@ public class guardBehavior : MonoBehaviour
         this.transform.position = currentPos; // apply new translation to Guard
     }
 
+
     // ====== ATTACK ======
     private void AttackPlayer()
     {
@@ -178,12 +178,14 @@ public class guardBehavior : MonoBehaviour
         }
     }
 
+
     // ====== RESET ATTACK ABILITY ======
     private void ResetAttack()
     {
         if (debug) {Debug.Log("Resetting Attack");}
         alreadyAttacked = false;
     }
+
 
     // ====== CALL FUNCTIONS FOR MOVING DURING AN ATTACK ======
     private void Attack()
@@ -196,6 +198,7 @@ public class guardBehavior : MonoBehaviour
         AttackMovement(moved);
         AttackMovement(moved);
     }
+
 
     // ====== MOVEMENT DURING AN ATTACK ======
     private void AttackMovement(bool moved)
@@ -221,11 +224,13 @@ public class guardBehavior : MonoBehaviour
         this.transform.position = currentPos; // Apply new translation to object
     }
 
+
     // ====== GETTING STUCK IN HONEY ======
     private void OnTriggerEnter(Collider col)
     {
         // Check to see if tag on collider is == to a honey cube
-        if (col.gameObject.tag == "honeyCube") {
+        if (col.gameObject.tag == "honeyCube")
+        {
             canMove = false;
             if (debug) {Debug.Log("Guard can't move. Stuck in Honey!");}
             
@@ -237,30 +242,6 @@ public class guardBehavior : MonoBehaviour
             currentPos.z = col.gameObject.transform.position.z;
 
             this.transform.position = currentPos; // Apply new translation to object
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // ====== TAKE DAMAGE ======
-    // for player and baby bees later on
-    public void TakeDamage(int damage) {
-        if (debug) {Debug.Log("Guard is taking damage!");}
-        health -= damage;
-
-        if (health <= 0) {
-            Destroy(gameObject);
         }
     }
 }
