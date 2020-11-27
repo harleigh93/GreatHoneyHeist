@@ -5,7 +5,7 @@ using UnityEngine;
 public class babyBeeBehavior : MonoBehaviour
 {
     // Debugging
-    private bool debug = true;      // If print statements should be printed or not
+    private bool debug = true; // If print statements should be printed or not
 
     // Baby Bee Health
     private float health = 3;

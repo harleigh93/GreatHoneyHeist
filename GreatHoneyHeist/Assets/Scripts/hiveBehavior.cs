@@ -25,7 +25,7 @@ public class hiveBehavior : MonoBehaviour
         hasKey = false;
 
         // Find and assign bee key
-        key = GameObject.FindWithTag("beekey").transform; // Find and assign Bee Key
+        key = GameObject.FindWithTag("beekey").transform;
     }
 
 

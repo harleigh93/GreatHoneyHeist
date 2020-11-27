@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\floatingBees.cs" />
      <Compile Include="Assets\Scripts\guardBehavior.cs" />
      <Compile Include="Assets\Scripts\hiveBehavior.cs" />
+     <Compile Include="Assets\Scripts\playerBehavior.cs" />
      <Compile Include="Assets\Scripts\spawnBeeKey.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/UAH/4_FA2020/CS Intro Video Game DsgProg/HoneyHeist/GreatHoneyHeist/GreatHoneyHeist/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
