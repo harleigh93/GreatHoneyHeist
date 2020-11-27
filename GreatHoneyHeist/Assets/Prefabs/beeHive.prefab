@@ -839,11 +839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcf94fc86b2a1640ae4dde4a6e4510d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  babyBeePrefab: {fileID: 7730761650384560398, guid: 6e51e82d0e70be1479eefc546ed7a58a,
+  SwarmPrefab: {fileID: 5176226682401036573, guid: 0852b65a1b4676244ae6d5400a35547f,
     type: 3}
-  babyBee1: {fileID: 0}
-  babyBee2: {fileID: 0}
-  babyBee3: {fileID: 0}
+  babyBeeSwarm: {fileID: 0}
 --- !u!1 &4569585705525880500
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,18 +10,26 @@ public class playerBehavior : MonoBehaviour
 
     private Transform sword; // variable to store sword model in the scene
     private Transform swordSock; // variable to store empty GameObject with position/rotation for sword placement
-    private bool hasSword;
+    private bool hasSword;// Does Player have sword yet?
     private bool rotated; // Has sword been rotated yet?
+
+    // Sword Rotation Variables
+    private float rotationSpeed = 1f;
+    private Quaternion targetRotation;
+    private bool swingLeft = true; // If sword will swing left
 
 
     // Start is called before the first frame update
     void Start()
     {
+        // SWORD CODE
         // Find and assign sword
         sword = GameObject.FindWithTag("sword").transform;
         // Find and assign socket for sword placement
         swordSock = GameObject.FindWithTag("swordSocket").transform;
-
+        // Assign initial sword direction to left
+        swingLeft = true;
+        // Set variables to false
         hasSword = false;
         rotated = false;
     }
@@ -29,11 +37,19 @@ public class playerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // SWING SWORD ON SPACE BAR PRESS (only if Player has sword)
+        if (hasSword && (Input.GetKeyDown(KeyCode.Space)) )
+        {
+            swingLeft = true; // set to true on initial space press to restart swing direction
+
+            Invoke("Attack", 0f);    // set rotation direction
+            Invoke("Attack", 0.25f); // change rotation direction
+            Invoke("Attack", 0.45f); // change rotation direction again to go back to center
+        }
+        // Update sword rotation on every frame
         if (hasSword)
         {
-            Vector3 pos; // Vector to hold position
-            pos = swordSock.position;  // set vector to position of sword socket on player bee
-            sword.position = pos; // assign new translation to sword
+            sword.rotation = Quaternion.Lerp (sword.rotation, targetRotation, 10 * rotationSpeed * Time.deltaTime); 
         }
     }
 
@@ -45,12 +61,42 @@ public class playerBehavior : MonoBehaviour
         if (col.gameObject.tag == "sword")
         {
             if (debug) {Debug.Log("Player found sword");}
-            hasSword = true;
+            hasSword = true; // Player now has sword
+
+            // rotated variable makes sure that this only happens once
             if (!rotated)
             {
+                Vector3 pos; // Vector to hold position
+                pos = swordSock.position;  // set vector to position of sword socket on player bee
+                sword.position = pos; // assign new translation to sword
+
                 sword.transform.Rotate(0.0f, 0.0f, -50.0f, Space.World); // Rotate sword once
-                rotated = true;
+                rotated = true; // won't rotate it again
+
+                targetRotation = sword.rotation; // store sword rotation in this variable for later attack rotation
+
+                sword.transform.parent = swordSock; // parent sword to swordSock so it will follow the player
             }
+        }
+    }
+
+
+    // ====== ATTACKING (swinging sword) ANIMATION VARIABLES FOR UPDATE FUNCTION ======
+    private void Attack()
+    {
+        // swing sword left
+        if (swingLeft)
+        {
+            // Set new angle rotation for sword using Quaternions
+            targetRotation *= Quaternion.AngleAxis(45, Vector3.right);
+            swingLeft = false; // next time go right
+        }
+        // swing sword right
+        else
+        {
+            // Set new angle rotation for sword using Quaternions
+            targetRotation *= Quaternion.AngleAxis(-90, Vector3.right);
+            swingLeft = true; // next time go left
         }
     }
 }

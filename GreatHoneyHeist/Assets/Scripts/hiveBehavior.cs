@@ -10,13 +10,13 @@ public class hiveBehavior : MonoBehaviour
     private Transform key; // Bee key model
     private bool hasKey;   // Does beehive have key?
 
-    // Baby Bee Prefab
-    public GameObject babyBeePrefab;// Baby bee prefab model
+    // BABY BEE VARIABLES
+    
+    // Baby Bees Swarm Prefab
+    public GameObject SwarmPrefab;
 
     // Create internal variable in code to hold the prefab
-    public GameObject babyBee1;
-    public GameObject babyBee2;
-    public GameObject babyBee3;
+    public GameObject babyBeeSwarm;
 
 
     // Start is called before the first frame update
@@ -26,13 +26,6 @@ public class hiveBehavior : MonoBehaviour
 
         // Find and assign bee key
         key = GameObject.FindWithTag("beekey").transform;
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 
@@ -70,28 +63,12 @@ public class hiveBehavior : MonoBehaviour
     public void spawnBabyBees()
     {
         // Spawn baby bee swarm
-        babyBee1 = Instantiate<GameObject>(babyBeePrefab);
-        babyBee2 = Instantiate<GameObject>(babyBeePrefab);
-        babyBee3 = Instantiate<GameObject>(babyBeePrefab);
+        babyBeeSwarm = Instantiate<GameObject>(SwarmPrefab);
 
 
         Vector3 pos; // Vector to hold position
         pos = this.transform.position;  // set vector to beehive position
         pos.y += 160f; // move up a little is visible above ground
-        babyBee1.transform.position = pos; // assign new translation to baby bee 1
-        babyBee2.transform.position = pos; // assign new translation to baby bee 2
-        babyBee3.transform.position = pos; // assign new translation to baby bee 3
-
-
-        // Move babyBee2 up a little
-        pos.y += 275f;
-        pos.x += 175f;
-        babyBee2.transform.position = pos; // Apply new translation to baby bee
-
-        // Move babyBee3 to the side a little
-        Vector3 pos2;
-        pos2 = babyBee3.transform.position; // What is current position of babyBee3?
-        pos2.x += 300f;
-        babyBee3.transform.position = pos2; // Apply new translation to baby bee
+        babyBeeSwarm.transform.position = pos; // assign new translation to baby bee swarm
     }
 }

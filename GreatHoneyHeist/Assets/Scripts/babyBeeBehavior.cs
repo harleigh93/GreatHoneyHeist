@@ -6,7 +6,7 @@ public class babyBeeBehavior : MonoBehaviour
 {
     // Debugging
     private bool debug = true; // If print statements should be printed or not
-
+    
     // Baby Bee Health
     private float health = 3;
 
@@ -56,6 +56,7 @@ public class babyBeeBehavior : MonoBehaviour
     // ====== BABY BEES GET KO'D ======
     private void KO_BabyBees()
     {
+        Destroy(gameObject);
         //Destroy(babyBee1);
         //Destroy(babyBee2);
         //Destroy(babyBee3);
