@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class playerBehavior : MonoBehaviour
 {
-
     // Debugging
     private bool debug = true; // If print statements should be printed or not
 
@@ -22,6 +21,7 @@ public class playerBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         // SWORD CODE
         // Find and assign sword
         sword = GameObject.FindWithTag("sword").transform;
