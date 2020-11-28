@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerBehavior : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class playerBehavior : MonoBehaviour
     private Quaternion targetRotation;
     private bool swingLeft = true; // If sword will swing left
 
+    public Text newScore;
 
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -32,6 +33,12 @@ public class playerBehavior : MonoBehaviour
         // Set variables to false
         hasSword = false;
         rotated = false;
+                
+        GameObject ourScore;                                // Create score object to hold quantity text
+        ourScore = GameObject.Find("PotScoreText");         // Store the current text in ourscore
+        newScore = ourScore.GetComponent<Text>();           // Store the current score in new score, to be later incrememnted
+        newScore.text = "0";                                // Set starting text to 0
+
     }
 
     // Update is called once per frame
@@ -53,6 +60,20 @@ public class playerBehavior : MonoBehaviour
         }
     }
 
+    // ====== COLLIDING WITH HONEY POT / SCORE INCREASE ======
+    void OnCollisionEnter(Collision coll)
+    {
+        GameObject collidedWith = coll.gameObject;
+        if(collidedWith.tag == "honeyPot")              //If the player has collided specifically with a honey pot
+        {
+            Destroy(collidedWith);                      // Destroy the pot
+
+            int score = int.Parse(newScore.text);       // find the previous score
+            score += 1;                                 // Increase the score by 1
+            newScore.text = score.ToString();           // Print out new score
+
+        }
+    }
 
     // ====== COLLIDING WITH SWORD / PLAYER PICKING UP SWORD ======
     private void OnTriggerEnter(Collider col)

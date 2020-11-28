@@ -8,6 +8,7 @@ TagManager:
   - beekey
   - sword
   - swordSocket
+  - honeyPot
   layers:
   - Default
   - TransparentFX
