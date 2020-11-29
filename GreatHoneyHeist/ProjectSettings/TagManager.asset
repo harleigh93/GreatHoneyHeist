@@ -11,6 +11,7 @@ TagManager:
   - honeyPot
   - babyBees
   - guard
+  - swordInitial
   layers:
   - Default
   - TransparentFX
