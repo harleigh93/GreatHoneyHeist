@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 307118990985857843}
   - component: {fileID: 8404502943035070917}
   - component: {fileID: 5608040556837367094}
-  - component: {fileID: 2220685530499013911}
   m_Layer: 0
   m_Name: honeyBubble_sm
   m_TagString: Untagged
@@ -78,19 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2220685530499013911
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897395833717579450}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3120054572054276529
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +88,6 @@ GameObject:
   - component: {fileID: 4942664051352490801}
   - component: {fileID: 4485339266929015643}
   - component: {fileID: 8967146984549326024}
-  - component: {fileID: 7042896566278568595}
   m_Layer: 0
   m_Name: ribbonBowRight
   m_TagString: Untagged
@@ -169,19 +154,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &7042896566278568595
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3120054572054276529}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3629608291035523647
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +165,6 @@ GameObject:
   - component: {fileID: 1349054012363390677}
   - component: {fileID: 4650856144818622201}
   - component: {fileID: 7592109328110339677}
-  - component: {fileID: 1488604498160205069}
   m_Layer: 0
   m_Name: outerHoney
   m_TagString: Untagged
@@ -260,19 +231,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1488604498160205069
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3629608291035523647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3836960165606603107
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +242,6 @@ GameObject:
   - component: {fileID: 6752758518792047153}
   - component: {fileID: 1699580015419238836}
   - component: {fileID: 560043119150835892}
-  - component: {fileID: 4659648311131001819}
   m_Layer: 0
   m_Name: ribbon
   m_TagString: Untagged
@@ -351,20 +308,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &4659648311131001819
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3836960165606603107}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &4082295356623670272
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +319,6 @@ GameObject:
   - component: {fileID: 7074596447582235723}
   - component: {fileID: 8793430113290481300}
   - component: {fileID: 2397387212719413728}
-  - component: {fileID: 7877457507869038765}
   m_Layer: 0
   m_Name: honeyNeck
   m_TagString: Untagged
@@ -443,20 +385,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7877457507869038765
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4082295356623670272}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &5020329215294657648
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +396,6 @@ GameObject:
   - component: {fileID: 1514611580134873566}
   - component: {fileID: 956870346755288462}
   - component: {fileID: 620288001182589762}
-  - component: {fileID: 2772315978732302253}
   m_Layer: 0
   m_Name: honeyBubble_large
   m_TagString: Untagged
@@ -535,19 +462,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2772315978732302253
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5020329215294657648}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5151885087050058059
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +473,6 @@ GameObject:
   - component: {fileID: 6007594070320800928}
   - component: {fileID: 726857153180551842}
   - component: {fileID: 8657760109876114098}
-  - component: {fileID: 4872190004105100917}
   m_Layer: 0
   m_Name: ribbonMiddle
   m_TagString: Untagged
@@ -626,19 +539,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &4872190004105100917
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5151885087050058059}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5888646550860630237
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +550,6 @@ GameObject:
   - component: {fileID: 4391820732495283553}
   - component: {fileID: 7050694290193044383}
   - component: {fileID: 7025805578548270447}
-  - component: {fileID: 2588185422480761636}
   m_Layer: 0
   m_Name: ribbonBowLeft
   m_TagString: Untagged
@@ -717,19 +616,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2588185422480761636
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888646550860630237}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7052238856087944034
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +627,6 @@ GameObject:
   - component: {fileID: 8049924869086505135}
   - component: {fileID: 4007949223870970415}
   - component: {fileID: 5864119695524900312}
-  - component: {fileID: 7185145181724569058}
   m_Layer: 0
   m_Name: honeyLid
   m_TagString: Untagged
@@ -808,20 +693,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7185145181724569058
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7052238856087944034}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &7498988297764526739
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +704,6 @@ GameObject:
   - component: {fileID: 8139099048047734210}
   - component: {fileID: 8717892404656579901}
   - component: {fileID: 1055533554015603399}
-  - component: {fileID: 6816547078135477200}
   m_Layer: 0
   m_Name: honeyBubble_med
   m_TagString: Untagged
@@ -900,19 +770,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &6816547078135477200
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7498988297764526739}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7933758626066713891
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +853,6 @@ GameObject:
   - component: {fileID: 3531717358817273409}
   - component: {fileID: 8792025272637474094}
   - component: {fileID: 1660374756975901381}
-  - component: {fileID: 4148982820126125773}
   m_Layer: 0
   m_Name: innerHoney
   m_TagString: Untagged
@@ -1063,16 +919,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &4148982820126125773
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9118638588812367961}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

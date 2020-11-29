@@ -9,6 +9,8 @@ TagManager:
   - sword
   - swordSocket
   - honeyPot
+  - babyBees
+  - guard
   layers:
   - Default
   - TransparentFX

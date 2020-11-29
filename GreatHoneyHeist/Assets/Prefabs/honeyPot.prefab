@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 116379801448975252}
   - component: {fileID: 1346940530600103859}
   - component: {fileID: 6430864197608676722}
-  - component: {fileID: 8740784738635827877}
   m_Layer: 0
   m_Name: lidStopper
   m_TagString: Untagged
@@ -78,20 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &8740784738635827877
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418940657234096331}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &827010044201154007
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +88,6 @@ GameObject:
   - component: {fileID: 3647043804041098994}
   - component: {fileID: 1045658743218476444}
   - component: {fileID: 7827521572711585061}
-  - component: {fileID: 7232215628463339945}
   m_Layer: 0
   m_Name: potDecoration03
   m_TagString: Untagged
@@ -170,20 +154,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7232215628463339945
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827010044201154007}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &2103763262695164627
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +165,6 @@ GameObject:
   - component: {fileID: 1848126166924092167}
   - component: {fileID: 8263686674164252523}
   - component: {fileID: 8918614306293324113}
-  - component: {fileID: 7630602998680467855}
   m_Layer: 0
   m_Name: potDecoration01
   m_TagString: Untagged
@@ -262,20 +231,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7630602998680467855
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103763262695164627}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &5081436314888342946
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +309,6 @@ GameObject:
   - component: {fileID: 5630784003134848448}
   - component: {fileID: 5630784003134848451}
   - component: {fileID: 5630784003134848450}
-  - component: {fileID: 5630784003134848453}
   m_Layer: 0
   m_Name: potBody
   m_TagString: Untagged
@@ -421,19 +375,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &5630784003134848453
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5630784003134848452}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5630784003378250409
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +386,6 @@ GameObject:
   - component: {fileID: 5630784003378250405}
   - component: {fileID: 5630784003378250404}
   - component: {fileID: 5630784003378250407}
-  - component: {fileID: 5630784003378250406}
   m_Layer: 0
   m_Name: potLip
   m_TagString: Untagged
@@ -512,20 +452,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &5630784003378250406
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5630784003378250409}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &8626165519791413856
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +463,6 @@ GameObject:
   - component: {fileID: 9188011346971638941}
   - component: {fileID: 1526075550622240191}
   - component: {fileID: 6497959496732395568}
-  - component: {fileID: 8639167246905345312}
   m_Layer: 0
   m_Name: potDecoration02
   m_TagString: Untagged
@@ -604,17 +529,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &8639167246905345312
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8626165519791413856}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

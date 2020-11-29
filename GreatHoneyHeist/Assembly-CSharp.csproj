@@ -55,10 +55,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\babyBeeBehavior.cs" />
      <Compile Include="Assets\Scripts\beeKeyBehavior.cs" />
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\floatingBees.cs" />
      <Compile Include="Assets\Scripts\guardBehavior.cs" />
+     <Compile Include="Assets\Scripts\HelpMenuBehavior.cs" />
      <Compile Include="Assets\Scripts\hiveBehavior.cs" />
+     <Compile Include="Assets\Scripts\HoneyBlockCollisionBehavior.cs" />
      <Compile Include="Assets\Scripts\playerBehavior.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\spawnBeeKey.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/UAH/4_FA2020/CS Intro Video Game DsgProg/HoneyHeist/GreatHoneyHeist/GreatHoneyHeist/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
