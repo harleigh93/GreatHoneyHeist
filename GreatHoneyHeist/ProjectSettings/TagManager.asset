@@ -11,6 +11,10 @@ TagManager:
   - honeyPot
   - babyBees
   - guard
+  - room1
+  - room2
+  - room3
+  - endGame
   layers:
   - Default
   - TransparentFX

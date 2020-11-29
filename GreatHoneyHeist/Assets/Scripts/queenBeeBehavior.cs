@@ -30,6 +30,8 @@ public class queenBeeBehavior : MonoBehaviour
         Vector3 pos; // Vector to hold position
         pos = queenTrigger.transform.position;  // set vector to trigger position
         pos.y += 160f; // move up a little so visible above ground
+        pos.x -= 1500f; //move to frame left
+        pos.z -= 300f; //move down frame
         queenBee.transform.position = pos; // assign new translation to queen bee
     }
 }
