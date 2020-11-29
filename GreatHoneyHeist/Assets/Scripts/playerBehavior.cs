@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerBehavior : MonoBehaviour
 {
@@ -20,9 +21,12 @@ public class playerBehavior : MonoBehaviour
 
     public Text newScore;
 
+    // Player Bee Health
+    private float health = 3;
+
+
     void Start()
     {
-
         // SWORD CODE
         // Find and assign sword
         sword = GameObject.FindWithTag("sword").transform;
@@ -56,7 +60,7 @@ public class playerBehavior : MonoBehaviour
         // Update sword rotation on every frame
         if (hasSword)
         {
-            sword.rotation = Quaternion.Lerp (sword.rotation, targetRotation, 10 * rotationSpeed * Time.deltaTime); 
+            sword.rotation = Quaternion.Lerp(sword.rotation, targetRotation, 10 * rotationSpeed * Time.deltaTime);            
         }
     }
 
@@ -76,6 +80,8 @@ public class playerBehavior : MonoBehaviour
     }
 
     // ====== COLLIDING WITH SWORD / PLAYER PICKING UP SWORD ======
+    // ====== COLLIDING WITH BABY BEES ======
+    // ====== COLLIDING WITH GUARD BEE / RESTARTING GAME ======
     private void OnTriggerEnter(Collider col)
     {
         // Check to see if tag on collider is == to the Sword
@@ -91,13 +97,29 @@ public class playerBehavior : MonoBehaviour
                 pos = swordSock.position;  // set vector to position of sword socket on player bee
                 sword.position = pos; // assign new translation to sword
 
-                sword.transform.Rotate(0.0f, 0.0f, -50.0f, Space.World); // Rotate sword once
+                sword.transform.Rotate(0.0f, 0.0f, -20.0f, Space.World); // Rotate sword once
                 rotated = true; // won't rotate it again
 
                 targetRotation = sword.rotation; // store sword rotation in this variable for later attack rotation
 
                 sword.transform.parent = swordSock; // parent sword to swordSock so it will follow the player
             }
+        }
+
+
+        // Check to see if tag on collider is == to the babyBees
+        if (col.gameObject.tag == "babyBees")
+        {
+            if (debug) {Debug.Log("Player hit by baby bees!");}
+            TakeDamage();
+        }
+
+
+        // Check to see if tag on collider is == to the guard
+        if (col.gameObject.tag == "guard")
+        {
+            if (debug) {Debug.Log("Player hit by guard");}
+            restartGame();
         }
     }
 
@@ -119,5 +141,26 @@ public class playerBehavior : MonoBehaviour
             targetRotation *= Quaternion.AngleAxis(-90, Vector3.right);
             swingLeft = true; // next time go left
         }
+    }
+
+
+    // ====== PLAYER TAKE DAMAGE ======
+    public void TakeDamage() {
+        if (debug) {Debug.Log("Player is taking damage!");}
+        health -= 1;
+
+        if (debug) {Debug.Log("Player health: " + health);}
+
+        if (health <= 0) {
+            restartGame();
+        }
+    }
+
+
+    // ====== RESTART GAME ON "DEATH" or CAUGHT BY GUARD ======
+    private void restartGame()
+    {
+        // Loads very first scene/level in the game; while also restarting the game, not just the level
+        SceneManager.LoadScene(0);
     }
 }

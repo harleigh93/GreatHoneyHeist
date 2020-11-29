@@ -5,7 +5,7 @@ using UnityEngine;
 public class hiveBehavior : MonoBehaviour
 {
     // Debugging
-    private bool debug = true; // If print statements should be printed or not
+    private bool debug = false; // If print statements should be printed or not
 
     private Transform key; // Bee key model
     private bool hasKey;   // Does beehive have key?
@@ -17,6 +17,7 @@ public class hiveBehavior : MonoBehaviour
 
     // Create internal variable in code to hold the prefab
     public GameObject babyBeeSwarm;
+
 
 
     // Start is called before the first frame update

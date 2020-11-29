@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2684206278629517646}
-  - component: {fileID: 9141988605956010346}
   - component: {fileID: 1630308863897984044}
   - component: {fileID: 3179079132294408503}
+  - component: {fileID: 9141988605956010346}
   m_Layer: 0
   m_Name: babyBeeSwarm
-  m_TagString: Untagged
+  m_TagString: babyBees
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,18 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9141988605956010346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176226682401036573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 920c0283a299b364db2f6c59cf92b1cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1630308863897984044
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77,6 +65,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9141988605956010346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176226682401036573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920c0283a299b364db2f6c59cf92b1cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8405715717373181334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,11 +84,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2684206278629517646}
     m_Modifications:
-    - target: {fileID: 7730761650384560398, guid: 6e51e82d0e70be1479eefc546ed7a58a,
-        type: 3}
-      propertyPath: m_Name
-      value: babyBee (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 7730761650384560385, guid: 6e51e82d0e70be1479eefc546ed7a58a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -159,6 +154,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7730761650384560398, guid: 6e51e82d0e70be1479eefc546ed7a58a,
+        type: 3}
+      propertyPath: m_Name
+      value: babyBee (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e51e82d0e70be1479eefc546ed7a58a, type: 3}
 --- !u!4 &2300837113808051351 stripped
@@ -174,11 +174,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2684206278629517646}
     m_Modifications:
-    - target: {fileID: 7730761650384560398, guid: 6e51e82d0e70be1479eefc546ed7a58a,
-        type: 3}
-      propertyPath: m_Name
-      value: babyBee
-      objectReference: {fileID: 0}
     - target: {fileID: 7730761650384560385, guid: 6e51e82d0e70be1479eefc546ed7a58a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -249,6 +244,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7730761650384560398, guid: 6e51e82d0e70be1479eefc546ed7a58a,
+        type: 3}
+      propertyPath: m_Name
+      value: babyBee
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e51e82d0e70be1479eefc546ed7a58a, type: 3}
 --- !u!4 &2300837113537393765 stripped
@@ -264,11 +264,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2684206278629517646}
     m_Modifications:
-    - target: {fileID: 7730761650384560398, guid: 6e51e82d0e70be1479eefc546ed7a58a,
-        type: 3}
-      propertyPath: m_Name
-      value: babyBee (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 7730761650384560385, guid: 6e51e82d0e70be1479eefc546ed7a58a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -338,6 +333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730761650384560398, guid: 6e51e82d0e70be1479eefc546ed7a58a,
+        type: 3}
+      propertyPath: m_Name
+      value: babyBee (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e51e82d0e70be1479eefc546ed7a58a, type: 3}
