@@ -9,6 +9,7 @@ public class playerBehavior : MonoBehaviour
     // Debugging
     private bool debug = true; // If print statements should be printed or not
 
+    private Transform playerbee;
     private Transform sword; // variable to store sword model in the scene
     private Transform swordSock; // variable to store empty GameObject with position/rotation for sword placement
     private bool hasSword;// Does Player have sword yet?
@@ -22,8 +23,7 @@ public class playerBehavior : MonoBehaviour
     public Text newScore;
 
     // Player Bee Health
-    private float health = 3;
-
+    private float health = 5;
 
     void Start()
     {
@@ -42,6 +42,8 @@ public class playerBehavior : MonoBehaviour
         ourScore = GameObject.Find("PotScoreText");         // Store the current text in ourscore
         newScore = ourScore.GetComponent<Text>();           // Store the current score in new score, to be later incrememnted
         newScore.text = "0";                                // Set starting text to 0
+
+        playerbee = GameObject.FindWithTag("Player").transform;
 
     }
 
@@ -77,7 +79,13 @@ public class playerBehavior : MonoBehaviour
             newScore.text = score.ToString();           // Print out new score
 
         }
+        //if (collidedWith.tag == "honeyCube")
+        //{
+        //    Debug.Log("Player hit Block");
+        //    collidedWith.transform.position.x = collidedWith.transform.position.x + 20;
+        //}
     }
+
 
     // ====== COLLIDING WITH SWORD / PLAYER PICKING UP SWORD ======
     // ====== COLLIDING WITH BABY BEES ======

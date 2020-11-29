@@ -1,7 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{08CE9EBC-A1E7-4F01-3BCF-D0390ACB7BE2}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatHoneyHeist", "GreatHoneyHeist.csproj", "{47C38180-1CE8-49EE-8F69-8955261CA589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatHoneyHeist.Editor", "GreatHoneyHeist.Editor.csproj", "{500D1413-E244-3753-B24A-908D99D541B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{08CE9EBC-A1E7-4F01-3BCF-D0390ACB7BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08CE9EBC-A1E7-4F01-3BCF-D0390ACB7BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08CE9EBC-A1E7-4F01-3BCF-D0390ACB7BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08CE9EBC-A1E7-4F01-3BCF-D0390ACB7BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C38180-1CE8-49EE-8F69-8955261CA589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C38180-1CE8-49EE-8F69-8955261CA589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C38180-1CE8-49EE-8F69-8955261CA589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C38180-1CE8-49EE-8F69-8955261CA589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500D1413-E244-3753-B24A-908D99D541B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500D1413-E244-3753-B24A-908D99D541B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500D1413-E244-3753-B24A-908D99D541B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500D1413-E244-3753-B24A-908D99D541B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C85DE5A3-BE1A-4443-BB90-348AA3F7F9C5}
 	EndGlobalSection
 EndGlobal
