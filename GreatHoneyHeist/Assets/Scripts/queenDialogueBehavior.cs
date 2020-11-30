@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class queenDialogueBehavior : MonoBehaviour
 {
@@ -33,9 +33,9 @@ public class queenDialogueBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inRoomOne = true;//
-        spawnQueenText();
-        spawnQueenBee();
+        inRoomOne = false;//
+//        spawnQueenText();
+//        spawnQueenBee();
         inRoomTwo = false;
         inRoomThree = false;
         atEnd = false;
@@ -72,13 +72,14 @@ public class queenDialogueBehavior : MonoBehaviour
         }
     }
 
+    // ====== SPAWN QUEEN BEE TEXT ======
     public void spawnQueenText()
     {
         //Instantiates the text object
     GameObject queenText = (GameObject)Instantiate(textPrefab);
 
-    //Grabs the TextMesh component from the game object
-    Text entranceText = queenText.GetComponent<Text>();
+        //Grabs the Text component from the game object
+        Text entranceText = queenText.GetComponent<Button>().GetComponentInChildren<Text>();
 
         //Spawns Queen and sets the text according to room.
         if (inRoomOne) {
@@ -102,7 +103,7 @@ public class queenDialogueBehavior : MonoBehaviour
     // ====== SPAWN QUEEN BEE ======
     public void spawnQueenBee()
     {
-        // Spawn baby bee swarm
+        // Spawn queen bee 
         queenBee = Instantiate<GameObject>(QueenPrefab);
 
         Vector3 pos; // Vector to hold position

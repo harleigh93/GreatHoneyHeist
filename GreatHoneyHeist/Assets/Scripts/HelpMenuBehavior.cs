@@ -16,6 +16,10 @@ public class HelpMenuBehavior : MonoBehaviour
     {
         helpWindow.SetActive(false);
     }
+    public void openQueen()             //Function to activate the queen dialogue, showing it
+    {
+        queenDialogue.SetActive(true);
+    }
     public void closeQueen()             //Function to deactivate the queen dialogue, hiding it
     {
         queenDialogue.SetActive(false);
