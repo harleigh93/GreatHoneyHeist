@@ -231,8 +231,10 @@ public class guardBehavior : MonoBehaviour
         // Check to see if tag on collider is == to a honey cube
         if (col.gameObject.tag == "honeyCube")
         {
-            canMove = false;
+            canMove = false; // Guard can no longer move
             if (debug) {Debug.Log("Guard can't move. Stuck in Honey!");}
+
+            col.gameObject.GetComponent<Collider>().isTrigger = false; // Prevents Honey Cube from being able to be pushed again
             
             Vector3 currentPos; // Vector of current position
             currentPos = this.transform.position; // get Guard's position

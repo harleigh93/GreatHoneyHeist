@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    int direction = 0;              //Variable for checking player's current facing direction, 0 = up, 1 = left, 2 = down, 3 = right
+    public static int direction = 0;              //Variable for checking player's current facing direction, 0 = up, 1 = left, 2 = down, 3 = right
     
     void Start()
     {

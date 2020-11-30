@@ -9,6 +9,7 @@ public class playerBehavior : MonoBehaviour
     // Debugging
     private bool debug = true; // If print statements should be printed or not
 
+    // General Sword Variables
     private Transform playerbee;
     private Transform sword; // variable to store sword model in the scene
     private Transform swordSock; // variable to store empty GameObject with position/rotation for sword placement
@@ -19,6 +20,10 @@ public class playerBehavior : MonoBehaviour
     private float rotationSpeed = 1f;
     private Quaternion targetRotation;
     private bool swingLeft = true; // If sword will swing left
+
+    // Move Honey Blocks Variable
+    private bool moveCube = false;
+    private Transform cube;
 
     public Text newScore;
 
@@ -72,32 +77,60 @@ public class playerBehavior : MonoBehaviour
         }
     }
 
+
     // ====== COLLIDING WITH HONEY POT / SCORE INCREASE ======
-    void OnCollisionEnter(Collision coll)
-    {
-        GameObject collidedWith = coll.gameObject;
-        if(collidedWith.tag == "honeyPot")              //If the player has collided specifically with a honey pot
-        {
-            Destroy(collidedWith);                      // Destroy the pot
-
-            int score = int.Parse(newScore.text);       // find the previous score
-            score += 1;                                 // Increase the score by 1
-            newScore.text = score.ToString();           // Print out new score
-
-        }
-        //if (collidedWith.tag == "honeyCube")
-        //{
-        //    Debug.Log("Player hit Block");
-        //    collidedWith.transform.position.x = collidedWith.transform.position.x + 20;
-        //}
-    }
-
-
+    // ====== COLLIDING WITH HONEY CUBE / MOVE CUBE ======
     // ====== COLLIDING WITH SWORD / PLAYER PICKING UP SWORD ======
     // ====== COLLIDING WITH BABY BEES ======
     // ====== COLLIDING WITH GUARD BEE / RESTARTING GAME ======
     private void OnTriggerEnter(Collider col)
     {
+
+        // If the player has collided specifically with a honey pot
+        if(col.gameObject.tag == "honeyPot")
+        {
+            Destroy(col.gameObject);                // Destroy the pot
+
+            int score = int.Parse(newScore.text);   //find the previous score
+            score += 1;                             // Increase the score by 1
+            newScore.text = score.ToString();       // Print out new score
+        }
+
+
+        // If the player has collided specifically with a honey cube
+        if(col.gameObject.tag == "honeyCube")
+        {
+            //if (debug) {Debug.Log("Player hit Block");}
+
+            Vector3 pos;                                // Vector to hold position
+            pos = col.gameObject.transform.position;    // Make position current cube's position
+
+            // Depending on which direction Player is moving, move Honey Cube in that direction
+            if (PlayerMovement.direction == 0) // UP
+            {
+                //if (debug) {Debug.Log("Player is facing up");}
+                pos.z +=100;  // add in positive z direction
+            }
+            if (PlayerMovement.direction == 1) // LEFT
+            {
+                //if (debug) {Debug.Log("Player is facing left");}
+                pos.x -=100;  // add in positive z direction
+            }
+            if (PlayerMovement.direction == 2) // DOWN
+            {
+                //if (debug) {Debug.Log("Player is facing down");}
+                pos.z -=100;  // add in positive z direction
+            }
+            if (PlayerMovement.direction == 3) // RIGHT
+            {
+                //if (debug) {Debug.Log("Player is facing right");}
+                pos.x +=100;  // add in positive z direction
+            }
+
+            col.gameObject.transform.position = pos;    // apply new position to cube to move it
+        }
+
+
         // Check to see if tag on collider is == to the Sword
         if (col.gameObject.tag == "sword")
         {
