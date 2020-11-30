@@ -637,6 +637,8 @@
     <Compile Include="Assets\Scripts\HoneyBlockCollisionBehavior.cs" />
     <Compile Include="Assets\Scripts\playerBehavior.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\queenBeeBehavior.cs" />
+    <Compile Include="Assets\Scripts\queenDialogueBehavior.cs" />
     <Compile Include="Assets\Scripts\spawnBeeKey.cs" />
   </ItemGroup>
   <ItemGroup>
