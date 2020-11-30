@@ -7,8 +7,8 @@ public class guardBehavior : MonoBehaviour
     // Debugging
     private bool debug = false; // If print statements should be printed or not
     
-    private Transform player;    // Player character
-    private float speed = 15f;   // How fast the guard will move
+    private Transform player;        // Player character
+    private float speed = 8f;        // How fast the guard will move
     private bool canMove;
 
     // Patroling
@@ -16,16 +16,6 @@ public class guardBehavior : MonoBehaviour
     public Transform rightLoc;  // Pre-determined location the guards can move
     private bool addMovement;   // Add speed to move to new location if this is true; else, subtract
     public bool vertical;       // Is Guard going up and down?
-
-    // Attacking
-    private float attackCooldown = 2f; // Wait time before guard can attack again
-    private bool alreadyAttacked;
-
-    // States
-    private float sightRange = 1500f;    // How far away the guard can see the player
-    private float attackRange = 800f;    // How close the player has to be before the guard attacks
-    private bool playerInSightRange, playerInAttackRange;
-
 
 
     // Start is called before the first frame update
@@ -53,44 +43,12 @@ public class guardBehavior : MonoBehaviour
     {
         if (canMove)
         {
-            // Is Player in sight range?
-            if (Vector3.Distance(transform.position, player.transform.position) < sightRange)
-            {
-                if (debug) {Debug.Log("Player is in sight range");}
-                playerInSightRange = true;
-            }
-            else
-            {
-                if (debug) {Debug.Log("Player is NOT in sight range");}
-                playerInSightRange = false;
-            }
-
-            // Is Player in attack range?
-            if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
-            {
-                if (debug) {Debug.Log("Player is in attack range");}
-                playerInAttackRange = true;
-            }
-            else
-            {
-                if (debug) {Debug.Log("Player is NOT in attack range");}
-                playerInAttackRange = false;
-            }        
-            
-            // Control States
-            if (!playerInSightRange && !playerInAttackRange) Patroling();
-            if (playerInSightRange && !playerInAttackRange) Patroling (); // No chasing for these guards
-            if (playerInAttackRange && playerInSightRange) AttackPlayer();
+            Patroling();
         }
         else{
             if (debug) {Debug.Log("Guard is stuck in honey. No movement.");}
         }
     }
-
-
-    // ================================
-    //      Guard State Functions
-    // ================================
 
 
     // ====== PATROL ======
@@ -161,70 +119,6 @@ public class guardBehavior : MonoBehaviour
     }
 
 
-    // ====== ATTACK ======
-    private void AttackPlayer()
-    {
-        if (debug) {Debug.Log("Attacking Player... with words! Curse you!");}
-        // Attack code
-        Invoke("Attack", 0f);
-
-
-        //transform.LookAt(player);
-
-        if (!alreadyAttacked)
-        {
-            alreadyAttacked = true;
-            Invoke("ResetAttack", attackCooldown);
-        }
-    }
-
-
-    // ====== RESET ATTACK ABILITY ======
-    private void ResetAttack()
-    {
-        if (debug) {Debug.Log("Resetting Attack");}
-        alreadyAttacked = false;
-    }
-
-
-    // ====== CALL FUNCTIONS FOR MOVING DURING AN ATTACK ======
-    private void Attack()
-    {
-        if (debug) {Debug.Log("Calling Attack()");}
-        bool moved = false;
-        AttackMovement(moved);
-        AttackMovement(moved);
-        moved = true;
-        AttackMovement(moved);
-        AttackMovement(moved);
-    }
-
-
-    // ====== MOVEMENT DURING AN ATTACK ======
-    private void AttackMovement(bool moved)
-    {
-        if (debug) {Debug.Log("Calling AttackMovement()");}
-
-        Vector3 currentPos; // Vector of current position
-        currentPos = this.transform.position; // What is current position of the guard?
-
-        if (moved)
-        {
-            // Guard has already moved forward for the attack, so move back to original position
-            currentPos.z -= speed;
-            currentPos.x -= speed;
-        }
-        else
-        {
-            // If guard hasn't started moving for the attack yet, move
-            currentPos.z += speed;
-            currentPos.x += speed;
-        }
-
-        this.transform.position = currentPos; // Apply new translation to object
-    }
-
-
     // ====== GETTING STUCK IN HONEY ======
     private void OnTriggerEnter(Collider col)
     {
@@ -235,6 +129,7 @@ public class guardBehavior : MonoBehaviour
             if (debug) {Debug.Log("Guard can't move. Stuck in Honey!");}
 
             col.gameObject.GetComponent<Collider>().isTrigger = false; // Prevents Honey Cube from being able to be pushed again
+            gameObject.GetComponent<Collider>().isTrigger = false;     // Prevents Guards from triggering restart game method if Player touches them while in Honey
             
             Vector3 currentPos; // Vector of current position
             currentPos = this.transform.position; // get Guard's position
