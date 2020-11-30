@@ -34,8 +34,8 @@ public class queenDialogueBehavior : MonoBehaviour
     void Start()
     {
         inRoomOne = false;//
-//        spawnQueenText();
-//        spawnQueenBee();
+ //       spawnQueenText();//
+ //       spawnQueenBee();//
         inRoomTwo = false;
         inRoomThree = false;
         atEnd = false;
@@ -43,28 +43,28 @@ public class queenDialogueBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         // Check to see if tag on collider is == room1
-        if (col.gameObject.tag == "room1")
+        if (gameObject.tag == "room1")
         {
             if (debug) { Debug.Log("Player in room one"); }
             inRoomOne = true;
             spawnQueenText();
         }
         // Check to see if tag on collider is == room2
-        if (col.gameObject.tag == "room2")
+        if (gameObject.tag == "room2")
         {
             if (debug) { Debug.Log("Player in room two"); }
             inRoomTwo = true;
             spawnQueenText();
         }
         // Check to see if tag on collider is == room3
-        if (col.gameObject.tag == "room3")
+        if (gameObject.tag == "room3")
         {
             if (debug) { Debug.Log("Player in room three"); }
             inRoomThree = true;
             spawnQueenText();
         }
         // Check to see if tag on collider is == endGame
-        if (col.gameObject.tag == "endGame")
+        if (gameObject.tag == "endGame")
         {
             if (debug) { Debug.Log("Player at end of game"); }
             inRoomThree = true;
@@ -76,27 +76,27 @@ public class queenDialogueBehavior : MonoBehaviour
     public void spawnQueenText()
     {
         //Instantiates the text object
-    GameObject queenText = (GameObject)Instantiate(textPrefab);
+        queenText = Instantiate<GameObject>(textPrefab);
 
         //Grabs the Text component from the game object
-        Text entranceText = queenText.GetComponent<Button>().GetComponentInChildren<Text>();
+        Text entranceText = queenText.GetComponent<Image>().GetComponentInChildren<Text>();
 
         //Spawns Queen and sets the text according to room.
         if (inRoomOne) {
-            entranceText.text = "Room1 Text";
             spawnQueenBee();
+            entranceText.text = "Room1 Text";            
         }
         if (inRoomTwo) {
-            entranceText.text = "Room2 Text";
             spawnQueenBee();
+            entranceText.text = "Room2 Text";
         }
         if (inRoomThree) {
-            entranceText.text = "Room3 Text";
             spawnQueenBee();
+            entranceText.text = "Room3 Text";
         }
         if (atEnd) {
-            entranceText.text = "Darn, you did it";
             spawnQueenBee();
+            entranceText.text = "Darn, you did it";
         }
     }
     
