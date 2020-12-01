@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: babyBeeBehavior.cs
+*/
+
 public class babyBeeBehavior : MonoBehaviour
 {
     // Debugging

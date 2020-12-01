@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: queenBeeBehavior.cs
+*/
+
 public class queenBeeBehavior : MonoBehaviour
 {   
     // QUEEN BEE VARIABLES

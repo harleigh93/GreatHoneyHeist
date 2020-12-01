@@ -1,5 +1,10 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
+
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: CameraFollow.cs
+*/
 
 public class CameraFollow : MonoBehaviour    // Behavior for the following camera
 {

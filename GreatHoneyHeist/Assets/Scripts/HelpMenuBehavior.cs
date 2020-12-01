@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: HelpMenuBehavior.cs
+*/
+
 public class HelpMenuBehavior : MonoBehaviour
 {
 
@@ -33,5 +39,15 @@ public class HelpMenuBehavior : MonoBehaviour
         continueButton.SetActive(false);                        // Hide Continue button as well
         queencopy = GameObject.Find("queenBee(Clone)");
         Destroy(queencopy);                                     //Destroy the displayed queen with text
+
+        // How to end the game if Player is at the very last area
+        if (playerBehavior.finishedGame == true)
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false; // quit game in editor
+            #else
+            Application.Quit(); // if game is built, quit game in window
+            #endif
+        }
     }
 }

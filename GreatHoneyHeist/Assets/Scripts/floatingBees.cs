@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: floatingBees.cs
+*/
+
 public class floatingBees : MonoBehaviour
 {
     // Bees will constantly float in the air - up and down!

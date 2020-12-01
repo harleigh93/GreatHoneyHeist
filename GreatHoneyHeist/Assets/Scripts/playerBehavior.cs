@@ -4,10 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: playerBehavior.cs
+*/
+
 public class playerBehavior : MonoBehaviour
 {
     // Debugging
-    private bool debug = true; // If print statements should be printed or not
+    private bool debug = false; // If print statements should be printed or not
 
     // General Sword Variables
     private Transform playerbee;
@@ -21,16 +27,17 @@ public class playerBehavior : MonoBehaviour
     private Quaternion targetRotation;
     private bool swingLeft = true; // If sword will swing left
 
-    // Move Honey Blocks Variable
-    //private bool moveCube = false;
+    // Honey Blocks Variable
     private Transform cube;
 
+    // Score Variable for Honey Pots
     public Text newScore;
 
     // Player Bee Health
     private float health = 5;
 
-    public GameObject QueenBee;         //Create gameobjects for objects to be spawned in (the queen prefab, and her text / textboxes
+    // Variables for Queen Bee appearances and dialogue
+    public GameObject QueenBee;         //Create gameobjects for objects to be spawned in (the queen prefab, and her text / textboxes)
     public GameObject QueenBeeIns;
     public GameObject Room1Text;
     public GameObject Room2Text;
@@ -42,6 +49,7 @@ public class playerBehavior : MonoBehaviour
     private bool isQueen1Out = false;
     private bool isQueen3Out = false;
     private bool isQueen4Out = false;
+    public static bool finishedGame = false; // Is Player at the end of the game?
 
 
     void Start()
@@ -119,7 +127,6 @@ public class playerBehavior : MonoBehaviour
         // If the player has collided specifically with a honey cube
         if(col.gameObject.tag == "honeyCube")
         {
-            //if (debug) {Debug.Log("Player hit Block");}
 
             Vector3 pos;                                // Vector to hold position
             pos = col.gameObject.transform.position;    // Make position current cube's position
@@ -239,6 +246,7 @@ public class playerBehavior : MonoBehaviour
                 textbox.SetActive(true);
                 contButton.SetActive(true);
                 Time.timeScale = 0;
+                finishedGame = true; // Player is at the end of the game/final trigger box
             }
         }
     }

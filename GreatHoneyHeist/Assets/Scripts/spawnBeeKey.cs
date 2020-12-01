@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: spawnBeeKey.cs
+*/
+
 public class spawnBeeKey : MonoBehaviour
 {
     // Debugging
-    private bool debug = true;      // If print statements should be printed or not
+    private bool debug = false;      // If print statements should be printed or not
 
     public Transform[] beehives;    // Array of all beehives in the scene
     private int randomHive;          // Hive that will have the bee key

@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: guardBehavior.cs
+*/
+
 public class guardBehavior : MonoBehaviour
 {
     // Debugging
@@ -35,87 +41,90 @@ public class guardBehavior : MonoBehaviour
             addMovement = false;
             this.transform.Rotate(0.0f, 180.0f, 0.0f, Space.World); // About to move right, so face right
         }
+
+        Invoke("Patroling", 0f);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
-        {
-            Patroling();
-        }
-        else{
-            if (debug) {Debug.Log("Guard is stuck in honey. No movement.");}
-        }
+        
     }
 
 
     // ====== PATROL ======
     private void Patroling()
     {
-        Vector3 currentPos; // Vector of current Position
-        currentPos = this.transform.position; // What is current position of Guard?
-
-        // SWAP DIRECTION ON REACHING TARGET LOCATION
-        if (vertical)
+        if (canMove)
         {
-            // Guard bee is moving left and right (X-Axis)
+            Vector3 currentPos; // Vector of current Position
+            currentPos = this.transform.position; // What is current position of Guard?
 
-
-            // If Guard is going right and current position is >= right location, swap direction
-            if (addMovement && currentPos.x >= rightLoc.position.x)
+            // SWAP DIRECTION ON REACHING TARGET LOCATION
+            if (vertical)
             {
-                addMovement = false;
-                this.transform.Rotate(0.0f, 180.0f, 0.0f, Space.World); // About to move left, so face left
-            } // If Guard is going left and current position is <= left location, swap direction
-            else if (!addMovement && currentPos.x <= leftLoc.position.x)
-            {
-                addMovement = true;
-                this.transform.Rotate(0.0f, 180.0f, 0.0f, Space.World); // About to move right, so face right
-            }
+                // Guard bee is moving left and right (X-Axis)
 
 
-            // MOVEMENT
-            if (addMovement)
-            {
-                currentPos.x += speed; // move right
-            }
+                // If Guard is going right and current position is >= right location, swap direction
+                if (addMovement && currentPos.x >= rightLoc.position.x)
+                {
+                    addMovement = false;
+                    this.transform.Rotate(0.0f, 180.0f, 0.0f, Space.World); // About to move left, so face left
+                } // If Guard is going left and current position is <= left location, swap direction
+                else if (!addMovement && currentPos.x <= leftLoc.position.x)
+                {
+                    addMovement = true;
+                    this.transform.Rotate(0.0f, 180.0f, 0.0f, Space.World); // About to move right, so face right
+                }
+
+
+                // MOVEMENT
+                if (addMovement)
+                {
+                    currentPos.x += speed; // move right
+                }
+                else
+                {
+                    currentPos.x -= speed; // move left
+                }
+            } 
             else
             {
-                currentPos.x -= speed; // move left
-            }
-        } 
-        else
-        {
-            // Guard bee is moving up and down (Z-Axis)
+                // Guard bee is moving up and down (Z-Axis)
 
 
-            // If Guard is going right (up) and current position is >= right (up) location, swap direction
-            if (addMovement && currentPos.z >= rightLoc.position.z)
-            {
-                addMovement = false;
-                this.transform.Rotate(0.0f, 180.0f, 0.0f, Space.World); // About to move down, so face down
-            } // If Guard is going left (down) and current position is <= left (down) location, swap direction
-            else if (!addMovement && currentPos.z <= leftLoc.position.z)
-            {
-                addMovement = true;
-                this.transform.Rotate(0.0f, -180.0f, 0.0f, Space.World); // About to move up, so face up
-            }
+                // If Guard is going right (up) and current position is >= right (up) location, swap direction
+                if (addMovement && currentPos.z >= rightLoc.position.z)
+                {
+                    addMovement = false;
+                    this.transform.Rotate(0.0f, 180.0f, 0.0f, Space.World); // About to move down, so face down
+                } // If Guard is going left (down) and current position is <= left (down) location, swap direction
+                else if (!addMovement && currentPos.z <= leftLoc.position.z)
+                {
+                    addMovement = true;
+                    this.transform.Rotate(0.0f, -180.0f, 0.0f, Space.World); // About to move up, so face up
+                }
 
 
-            // MOVEMENT
-            if (addMovement)
-            {
-                currentPos.z += speed; // move up
+                // MOVEMENT
+                if (addMovement)
+                {
+                    currentPos.z += speed; // move up
+                }
+                else
+                {
+                    currentPos.z -= speed; // move down
+                }
             }
-            else
-            {
-                currentPos.z -= speed; // move down
-            }
+
+            this.transform.position = currentPos; // apply new translation to Guard
+            Invoke("Patroling", 0.02f);
         }
-
-        this.transform.position = currentPos; // apply new translation to Guard
+        else{
+            if (debug) {Debug.Log("Guard is stuck in honey. No movement.");}
+        }
     }
 
 

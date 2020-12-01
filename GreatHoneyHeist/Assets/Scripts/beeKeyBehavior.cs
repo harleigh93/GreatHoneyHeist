@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* TEAM 5
+* Harleigh Bass, Kimberly Brooks, Emma Kratt
+* SCRIPT: beeKeyBehavior.cs
+*/
+
 public class beeKeyBehavior : MonoBehaviour
 {
     // Debugging
-    private bool debug = true;          // If print statements should be printed or not
+    private bool debug = false;          // If print statements should be printed or not
 
     public static bool playerHaveKey;   // Does the Player have the bee key?
 
