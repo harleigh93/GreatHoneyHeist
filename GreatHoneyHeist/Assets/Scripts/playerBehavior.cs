@@ -22,13 +22,27 @@ public class playerBehavior : MonoBehaviour
     private bool swingLeft = true; // If sword will swing left
 
     // Move Honey Blocks Variable
-    private bool moveCube = false;
+    //private bool moveCube = false;
     private Transform cube;
 
     public Text newScore;
 
     // Player Bee Health
     private float health = 5;
+
+    public GameObject QueenBee;         //Create gameobjects for objects to be spawned in (the queen prefab, and her text / textboxes
+    public GameObject QueenBeeIns;
+    public GameObject Room1Text;
+    public GameObject Room2Text;
+    public GameObject Room3Text;
+    public GameObject Room4Text;
+    public GameObject textbox;
+    public GameObject contButton;
+    private bool isQueen2Out = false;   //mark all future queen instantiations as false
+    private bool isQueen1Out = false;
+    private bool isQueen3Out = false;
+    private bool isQueen4Out = false;
+
 
     void Start()
     {
@@ -55,6 +69,10 @@ public class playerBehavior : MonoBehaviour
         newScore.text = "0";                                // Set starting text to 0
 
         playerbee = GameObject.FindWithTag("Player").transform;
+
+        Room2Text.SetActive(false);
+        textbox.SetActive(false);
+        contButton.SetActive(false);
 
     }
 
@@ -83,6 +101,7 @@ public class playerBehavior : MonoBehaviour
     // ====== COLLIDING WITH SWORD / PLAYER PICKING UP SWORD ======
     // ====== COLLIDING WITH BABY BEES ======
     // ====== COLLIDING WITH GUARD BEE / RESTARTING GAME ======
+    // ====== COLLIDING WITH QUEEN TRIGGERS / SUMMON QUEEN ======
     private void OnTriggerEnter(Collider col)
     {
 
@@ -160,6 +179,67 @@ public class playerBehavior : MonoBehaviour
         {
             if (debug) {Debug.Log("Player hit by guard");}
             restartGame();
+        }
+
+
+        // Check to see if the collided object is the first empty Queen Triggering object (Occurs in cell)
+        if (col.gameObject.tag == "room1")
+        {
+            if (isQueen1Out == false)         //Check that the queen has not already been summoned
+            {
+                QueenBeeIns = Instantiate<GameObject>(QueenBee);                //Summon Queen and move her to apporpriate position
+                QueenBeeIns.transform.position = new Vector3(-121, 1689, 2507);
+                isQueen1Out = true;                                             //Prevents multiple queen summons
+                Room1Text.SetActive(true);                                      //Activate the appropriate text, textbox, and the continue button
+                textbox.SetActive(true);                                    
+                contButton.SetActive(true);         
+            }
+        }
+
+
+        // Check to see if the collided object is the second empty Queen Triggering object (Occurs before baby bee room) See comments above ^
+        if (col.gameObject.tag == "room2")
+        {
+            if (isQueen2Out == false)  
+            {
+                QueenBeeIns = Instantiate<GameObject>(QueenBee);
+                QueenBeeIns.transform.position = new Vector3(28633, 1840, 25814);
+                isQueen2Out = true;
+                Room2Text.SetActive(true);
+                textbox.SetActive(true);
+                contButton.SetActive(true);
+            }
+        }
+
+
+        // Check to see if the collided object is the third empty Queen Triggering object (Occurs before maze) See comments above ^
+        if (col.gameObject.tag == "room3")
+        {
+            if (isQueen3Out == false)
+            {
+                QueenBeeIns = Instantiate<GameObject>(QueenBee);
+                QueenBeeIns.transform.position = new Vector3(50929, 1763, 29290);
+                isQueen3Out = true;
+                Room3Text.SetActive(true);
+                textbox.SetActive(true);
+                contButton.SetActive(true);
+            }
+        }
+
+
+        // Check to see if the collided object is the final empty Queen Triggering object (Occurs after maze) See comments above ^
+        if (col.gameObject.tag == "endGame")
+        {
+            if (isQueen4Out == false)
+            {
+                QueenBeeIns = Instantiate<GameObject>(QueenBee);
+                QueenBeeIns.transform.position = new Vector3(76617, 1788, 16480);
+                isQueen4Out = true;
+                Room4Text.SetActive(true);
+                textbox.SetActive(true);
+                contButton.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
     }
 

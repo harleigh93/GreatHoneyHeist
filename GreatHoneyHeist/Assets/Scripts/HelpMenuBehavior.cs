@@ -5,10 +5,15 @@ using UnityEngine;
 public class HelpMenuBehavior : MonoBehaviour
 {
 
-    public GameObject helpWindow;
-    public GameObject queenDialogue;
-    public GameObject queenPrefab;
+    public GameObject helpWindow;           //Create gameobjects to show/hide textbox elements
     public GameObject queenBee;
+    public GameObject room2text;
+    public GameObject room1text;
+    public GameObject room3text;
+    public GameObject room4text;
+    public GameObject textbox;
+    public GameObject continueButton;
+    public GameObject queencopy;
 
     public void helpRun()               //Function to activate the help menu, showing it on screen
     {
@@ -18,17 +23,15 @@ public class HelpMenuBehavior : MonoBehaviour
     {
         helpWindow.SetActive(false);
     }
-    public void openQueen()             //Function to activate the queen dialogue, showing it
+    public void closeText()                                     //On continue press (used to close Queen Bee Dialouge), set all possible displayed texts and the textbox to invisible
     {
-        queenDialogue.SetActive(true);
-    }
-    public void closeQueen()             //Function to deactivate the queen dialogue, hiding it
-    {
-        queenDialogue.SetActive(false);
-    }
-    public void destroyQueen()             // Function to destroy the queen prefab
-    {
-        queenBee = Instantiate<GameObject>(queenPrefab);
-        Destroy(queenBee);
+        textbox.SetActive(false);
+        room2text.SetActive(false);
+        room1text.SetActive(false);
+        room3text.SetActive(false);
+        room4text.SetActive(false);
+        continueButton.SetActive(false);                        // Hide Continue button as well
+        queencopy = GameObject.Find("queenBee(Clone)");
+        Destroy(queencopy);                                     //Destroy the displayed queen with text
     }
 }
