@@ -7,6 +7,8 @@ public class HelpMenuBehavior : MonoBehaviour
 
     public GameObject helpWindow;
     public GameObject queenDialogue;
+    public GameObject queenPrefab;
+    public GameObject queenBee;
 
     public void helpRun()               //Function to activate the help menu, showing it on screen
     {
@@ -23,5 +25,10 @@ public class HelpMenuBehavior : MonoBehaviour
     public void closeQueen()             //Function to deactivate the queen dialogue, hiding it
     {
         queenDialogue.SetActive(false);
+    }
+    public void destroyQueen()             // Function to destroy the queen prefab
+    {
+        queenBee = Instantiate<GameObject>(queenPrefab);
+        Destroy(queenBee);
     }
 }

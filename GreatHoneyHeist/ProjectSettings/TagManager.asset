@@ -17,6 +17,7 @@ TagManager:
   - endGame
   - swordInitial
   - Door
+  - queen
   layers:
   - Default
   - TransparentFX

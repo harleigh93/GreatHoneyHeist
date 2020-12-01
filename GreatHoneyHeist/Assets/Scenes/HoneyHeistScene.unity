@@ -8875,7 +8875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536494229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59952, y: 5250, z: -48187}
+  m_LocalPosition: {x: -60127, y: 5250, z: -46097}
   m_LocalScale: {x: 600, y: 600, z: 600}
   m_Children: []
   m_Father: {fileID: 1609758081}
@@ -8970,7 +8970,7 @@ MonoBehaviour:
   textPrefab: {fileID: 1720827190481994141, guid: ba7b1e9eddee3f3439abe3d52466b81e,
     type: 3}
   queenText: {fileID: 0}
-  QueenPrefab: {fileID: 3720965055656310379, guid: bbbe226ac90749149abfc92bdebc9820,
+  queenPrefab: {fileID: 3720965055656310379, guid: bbbe226ac90749149abfc92bdebc9820,
     type: 3}
   queenBee: {fileID: 0}
   queenTrigger: {fileID: 536494229}
@@ -10386,6 +10386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpWindow: {fileID: 395711005}
   queenDialogue: {fileID: 1720827190481994141, guid: ba7b1e9eddee3f3439abe3d52466b81e,
+    type: 3}
+  queenBee: {fileID: 3720965055656310379, guid: bbbe226ac90749149abfc92bdebc9820,
     type: 3}
 --- !u!4 &629451277
 Transform:
@@ -14468,6 +14470,7 @@ GameObject:
   - component: {fileID: 839405939}
   - component: {fileID: 839405938}
   - component: {fileID: 839405937}
+  - component: {fileID: 839405940}
   m_Layer: 0
   m_Name: endGameTrigger
   m_TagString: endGame
@@ -14483,7 +14486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839405935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31950, y: 5250, z: -18225}
+  m_LocalPosition: {x: 16396, y: 5250, z: -32287}
   m_LocalScale: {x: 3000, y: 1000, z: 1000}
   m_Children: []
   m_Father: {fileID: 1609758081}
@@ -14547,6 +14550,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839405935}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &839405940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839405935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1261c15805a5ea04d8e5fca2e9ef5925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPrefab: {fileID: 1720827190481994141, guid: ba7b1e9eddee3f3439abe3d52466b81e,
+    type: 3}
+  queenText: {fileID: 0}
+  queenPrefab: {fileID: 3720965055656310379, guid: bbbe226ac90749149abfc92bdebc9820,
+    type: 3}
+  queenBee: {fileID: 0}
+  queenTrigger: {fileID: 839405935}
 --- !u!1 &846004781
 GameObject:
   m_ObjectHideFlags: 0
@@ -20299,6 +20321,7 @@ GameObject:
   - component: {fileID: 1148860378}
   - component: {fileID: 1148860377}
   - component: {fileID: 1148860376}
+  - component: {fileID: 1148860379}
   m_Layer: 0
   m_Name: room3Trigger
   m_TagString: room3
@@ -20314,7 +20337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148860374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10100, y: 5250, z: -4700}
+  m_LocalPosition: {x: -14893, y: 5250, z: -21350}
   m_LocalScale: {x: 1000, y: 1000, z: 2000}
   m_Children: []
   m_Father: {fileID: 1609758081}
@@ -20378,6 +20401,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148860374}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1148860379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148860374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1261c15805a5ea04d8e5fca2e9ef5925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPrefab: {fileID: 1720827190481994141, guid: ba7b1e9eddee3f3439abe3d52466b81e,
+    type: 3}
+  queenText: {fileID: 0}
+  queenPrefab: {fileID: 3720965055656310379, guid: bbbe226ac90749149abfc92bdebc9820,
+    type: 3}
+  queenBee: {fileID: 0}
+  queenTrigger: {fileID: 1148860374}
 --- !u!1 &1150567309
 GameObject:
   m_ObjectHideFlags: 0
@@ -29053,6 +29095,7 @@ GameObject:
   - component: {fileID: 1580845861}
   - component: {fileID: 1580845860}
   - component: {fileID: 1580845859}
+  - component: {fileID: 1580845862}
   m_Layer: 0
   m_Name: room2Trigger
   m_TagString: room2
@@ -29068,7 +29111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580845857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21625, y: 5250, z: -4750}
+  m_LocalPosition: {x: -24025, y: 5250, z: -20850}
   m_LocalScale: {x: 1000, y: 1000, z: 2000}
   m_Children: []
   m_Father: {fileID: 1609758081}
@@ -29132,6 +29175,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580845857}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1580845862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580845857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1261c15805a5ea04d8e5fca2e9ef5925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPrefab: {fileID: 1720827190481994141, guid: ba7b1e9eddee3f3439abe3d52466b81e,
+    type: 3}
+  queenText: {fileID: 0}
+  queenPrefab: {fileID: 3720965055656310379, guid: bbbe226ac90749149abfc92bdebc9820,
+    type: 3}
+  queenBee: {fileID: 0}
+  queenTrigger: {fileID: 1580845857}
 --- !u!1001 &1581883172
 PrefabInstance:
   m_ObjectHideFlags: 0
