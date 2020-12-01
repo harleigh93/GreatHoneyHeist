@@ -11,11 +11,12 @@ using UnityEngine;
 public class guardBehavior : MonoBehaviour
 {
     // Debugging
-    private bool debug = false; // If print statements should be printed or not
+    private bool debug = true; // If print statements should be printed or not
     
     private Transform player;        // Player character
-    private float speed = 8f;        // How fast the guard will move
-    private bool canMove;
+    private float speed;             // How fast the guard will move
+    private bool canMove;            // is guard stuck in honey?
+    private bool waiting;            // is guard waiting?
 
     // Patroling
     public Transform leftLoc;   // Pre-determined location the guards can move
@@ -28,10 +29,15 @@ public class guardBehavior : MonoBehaviour
     void Start()
     {
         canMove = true;
+        waiting = false;
         player = GameObject.Find("playerBee").transform; // Find and assign Player
+        gameObject.GetComponent<Collider>().isTrigger = true;
+
+        // initial guard speed
+        speed = Random.Range (5f, 10f);
 
         float direction = Random.Range (0f, 1f);
-        if (debug) {Debug.Log("direction choice: " + direction);}
+        //if (debug) {Debug.Log("direction choice: " + direction);}
         if (direction <= 0.5)
         {
             addMovement = true;
@@ -45,19 +51,13 @@ public class guardBehavior : MonoBehaviour
         Invoke("Patroling", 0f);
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     // ====== PATROL ======
     private void Patroling()
     {
         if (canMove)
         {
+           
+            if (debug) {Debug.Log("moving");}
             Vector3 currentPos; // Vector of current Position
             currentPos = this.transform.position; // What is current position of Guard?
 
@@ -81,6 +81,7 @@ public class guardBehavior : MonoBehaviour
 
 
                 // MOVEMENT
+                //speed = Random.Range (5f, 10f);
                 if (addMovement)
                 {
                     currentPos.x += speed; // move right
@@ -109,6 +110,7 @@ public class guardBehavior : MonoBehaviour
 
 
                 // MOVEMENT
+                //speed = Random.Range (5f, 10f);
                 if (addMovement)
                 {
                     currentPos.z += speed; // move up
@@ -118,11 +120,11 @@ public class guardBehavior : MonoBehaviour
                     currentPos.z -= speed; // move down
                 }
             }
-
-            this.transform.position = currentPos; // apply new translation to Guard
-            Invoke("Patroling", 0.02f);
+                this.transform.position = currentPos; // apply new translation to Guard
+                Invoke("Patroling", 0.02f);
         }
-        else{
+        else
+        {
             if (debug) {Debug.Log("Guard is stuck in honey. No movement.");}
         }
     }
